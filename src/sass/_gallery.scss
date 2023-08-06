@@ -2,6 +2,7 @@
   --dark: #070707;
   --white: #fff;
   --size-index: calc(1vw + 1vh);
+  --transition: 0.75s cubic-bezier(0.25, 0.7, 0, 1);
 }
 
 @font-face {
@@ -34,5 +35,22 @@ html {
 }
 
 .slider__wrapper {
-  transition: ease 0.75s !important;
+  transition: var(--transition) !important;
+  will-change: transform;
+}
+
+.slider__item {
+  min-height: 75vh;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.slider__img {
+  position: absolute;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background-size: cover;
+  transition: var(--transition) !important;
+  will-change: transform;
 }
