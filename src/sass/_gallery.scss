@@ -40,9 +40,10 @@ html {
 }
 
 .slider__item {
-  min-height: 75vh;
+  max-height: 75vh;
   overflow: hidden;
-  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: transform var(--transition);
 }
 
 .slider__img {
@@ -53,4 +54,25 @@ html {
   background-size: cover;
   transition: var(--transition) !important;
   will-change: transform;
+}
+
+.slider_main {
+  z-index: 2;
+}
+
+.slider_bg {
+  z-index: -1;
+  transform: rotate(-20deg) !important;
+  top: -90vh;
+  left: -10vh;
+  opacity: 0.19;
+  filter: saturate(10) blur(120px);
+}
+.slider_bg .slider__item {
+  max-height: 100vh;
+}
+
+.slider__item.opened {
+  z-index: 2;
+  transform: rotate(-15deg) scale(1.4) !important;
 }
