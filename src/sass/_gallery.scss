@@ -31,19 +31,20 @@ html {
   top: 10vh;
   height: 100%;
   transform: rotate(15deg);
-  overflow: visible;
+  overflow: visible !important;
 }
 
 .slider__wrapper {
   transition: var(--transition) !important;
   will-change: transform;
+  height: auto;
 }
 
 .slider__item {
   max-height: 75vh;
   overflow: hidden;
   cursor: pointer;
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .slider__img {
@@ -56,23 +57,22 @@ html {
   will-change: transform;
 }
 
-.slider_main {
-  z-index: 2;
-}
-
 .slider_bg {
-  z-index: -1;
+  z-index: 0;
   transform: rotate(-20deg) !important;
   top: -90vh;
   left: -10vh;
   opacity: 0.19;
   filter: saturate(10) blur(120px);
+  pointer-events: none;
 }
 .slider_bg .slider__item {
   max-height: 100vh;
+  overflow: visible;
 }
 
 .slider__item.opened {
-  z-index: 2;
+  z-index: 100;
   transform: rotate(-15deg) scale(1.4) !important;
+  box-shadow: rgb(0 0 0 /0.75) 0 0 0 10000px;
 }
