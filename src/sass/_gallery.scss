@@ -37,7 +37,6 @@ html {
 .slider__wrapper {
   transition: var(--transition) !important;
   will-change: transform;
-  height: auto;
 }
 
 .slider__item {
@@ -57,22 +56,25 @@ html {
   will-change: transform;
 }
 
+.slider_main {
+  z-index: 3 !important;
+}
+
 .slider_bg {
-  z-index: 0;
+  z-index: -1;
   transform: rotate(-20deg) !important;
   top: -90vh;
   left: -10vh;
   opacity: 0.19;
-  filter: saturate(10) blur(120px);
+  filter: blur(120px) saturate(10);
   pointer-events: none;
 }
 .slider_bg .slider__item {
   max-height: 100vh;
-  overflow: visible;
 }
 
 .slider__item.opened {
-  z-index: 100;
+  z-index: 3;
   transform: rotate(-15deg) scale(1.4) !important;
   box-shadow: rgb(0 0 0 /0.75) 0 0 0 10000px;
 }

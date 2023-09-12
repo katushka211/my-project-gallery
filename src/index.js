@@ -23,7 +23,8 @@ const sliderBg = new Swiper('.slider_bg', {
   slidesPerView: 3.5,
   spaceBetween: 60,
 });
-sliderBg.controller.control = sliderMain;
+
+sliderMain.controller.control = sliderBg;
 
 const sliderItems = document.querySelectorAll('.slider__item');
 
