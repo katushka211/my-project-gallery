@@ -85,7 +85,7 @@ html {
   top: 14vh;
   left: 8vw;
   max-width: 24vw;
-  opacity: 0.9;
+  transition: opacity var(--transition), transform var(--transition);
 }
 
 .logo {
@@ -101,6 +101,17 @@ html {
   margin-top: 0;
 }
 
+.description p {
+  opacity: 0.9;
+  transition: transform var(--transition);
+  transition-duration: 3s;
+}
+
 .description.hidden {
   opacity: 0;
+  transform: translateY(5vh);
+}
+
+.description.hidden p {
+  transform: translateY(2vh);
 }
