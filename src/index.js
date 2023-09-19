@@ -17,6 +17,7 @@ const sliderMain = new Swiper('.slider_main', {
     },
   },
 });
+
 const sliderBg = new Swiper('.slider_bg', {
   centeredSlides: true,
   parallax: true,
@@ -32,4 +33,11 @@ sliderItems.forEach(item => {
   item.addEventListener('click', event => {
     item.classList.toggle('opened');
   });
+});
+
+let desc = document.querySelector('.description');
+sliderMain.on('slideChange', e => {
+  sliderMain.activeIndex > 0
+    ? desc.classList.add('hidden')
+    : desc.classList.remove('hidden');
 });

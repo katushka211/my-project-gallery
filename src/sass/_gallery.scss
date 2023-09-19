@@ -67,7 +67,7 @@ html {
   left: -10vh;
   opacity: 0.14;
   filter: blur(120px) saturate(10);
-  pointer-events: none;
+  // pointer-events: none;
 }
 .slider_bg .slider__item {
   max-height: 100vh;
@@ -99,4 +99,8 @@ html {
 
 .text {
   margin-top: 0;
+}
+
+.description.hidden {
+  opacity: 0;
 }
