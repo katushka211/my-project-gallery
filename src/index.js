@@ -31,8 +31,20 @@ const sliderItems = document.querySelectorAll('.slider__item');
 
 sliderItems.forEach(item => {
   item.addEventListener('click', event => {
+    // const openedSlide = document.querySelector('.slider__item.opened');
+    // if (openedSlide) {
+    //   openedSlide.classList.remove('opened');
+    // }
     item.classList.toggle('opened');
   });
+});
+
+document.addEventListener('click', event => {
+  if (event.currentTarget && !event.target.classList.contains('slider__img')) {
+    sliderItems.forEach(item => {
+      item.classList.remove('opened');
+    });
+  }
 });
 
 let desc = document.querySelector('.description');

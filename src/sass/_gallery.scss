@@ -34,6 +34,17 @@ html {
   overflow: visible !important;
 }
 
+// .slider_overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0, 0, 0, 0.6);
+//   display: none;
+//   z-index: 5;
+// }
+
 .slider__wrapper {
   transition: var(--transition) !important;
   will-change: transform;
